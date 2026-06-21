@@ -1,3 +1,4 @@
+console.log("popup.js loaded");
 document.getElementById("captureBtn").addEventListener("click", async () => {
 
     let tabs = await chrome.tabs.query({
@@ -56,18 +57,8 @@ document.getElementById("captureBtn").addEventListener("click", async () => {
             });
 
             alert("Capture Started");
+
         }
     });
-
-});
-
-
-document.getElementById("stopBtn").addEventListener("click", () => {
-
-    chrome.runtime.sendMessage({
-        action: "stopCapture"
-    });
-
-    alert("Capture Stopped");
 
 });
